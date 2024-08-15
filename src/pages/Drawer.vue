@@ -16,6 +16,7 @@
           <v-container style="align-items: center; margin-left: 35px;">
             <List style="max-height: 300px;" />
           </v-container>
+
           <template v-slot:append>
             <div class="pa-6">
               <v-btn block>
@@ -24,7 +25,10 @@
             </div>
           </template>
         </v-navigation-drawer>
-        <v-main style="height: 100vh; width: 50vw;" />
+        <v-main style="height: 100vh; width: 50vw;" >
+          <Note/>
+
+        </v-main>
       </v-layout>
     </v-card>
   </template>
