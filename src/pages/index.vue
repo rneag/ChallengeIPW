@@ -1,4 +1,11 @@
 <template>
+<<<<<<< HEAD
+</template>
+
+<script lang="ts">
+
+</script>
+=======
   <Drawer>
   </Drawer>
 </template>
@@ -7,3 +14,4 @@
 import Drawer from './Drawer.vue';
   //
 </script>
+>>>>>>> refs/remotes/origin/main
