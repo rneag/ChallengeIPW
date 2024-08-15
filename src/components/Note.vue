@@ -1,9 +1,7 @@
 <template>
-	<v-container>
-		<v-app>
-		<v-card>
+		<v-card style="max-width: 600px; display: block; margin: auto;">
 			<v-card-title class="text-h5 grey lighten-2">Add New Task</v-card-title>
-			<v-form class="mx-4 mt-4 pb-4" ref="form">
+			<v-form class="mx-4 mt-4 pb-4" ref="form" style="margin-left: auto;">
 			  <v-text-field
 				v-model="newTask.title"
 				label="Title"
@@ -16,9 +14,7 @@
 				<v-btn color="primary">Add</v-btn>
 			  </div>
 			</v-form>
-		  </v-card>
-	  </v-app>
-	</v-container>
+		</v-card>
 	
 </template>
 
