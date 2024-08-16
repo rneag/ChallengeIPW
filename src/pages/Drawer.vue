@@ -19,14 +19,20 @@
 
           <template v-slot:append>
             <div class="pa-6">
-              <v-btn block>
+              <v-btn block @click.stop="showTextBox = !showTextBox">
                 Add Note
               </v-btn>
             </div>
           </template>
         </v-navigation-drawer>
         <v-main style="height: 100vh; width: 50vw;" >
-          <Note  style="text-align: center;"/>
+
+          <v-btn style="background-color: white; color: black; float: right; width: 12rem; font-size: 15px; font-weight:bold" @click="">
+              Toggle <br> Dark Mode
+          </v-btn>
+
+          <Note v-if="showTextBox" style="text-align: center;"/>
+
 
         </v-main>
       </v-layout>
@@ -36,13 +42,30 @@
   <script lang="ts">
     import { defineComponent} from 'vue';
     import List from '@/components/List.vue';
-    
+    import { useDark, useToggle } from '@vueuse/core';
+
+    const isDark = useDark();
+    const toggleDark = useToggle(isDark);
+
+
     export default defineComponent({
       data ()
       {
-
+    
         return {
-            
+            showTextBox: false,
+        }
+      },
+
+      methods: {
+
+
+
+
+        //stuff
+        printStuff()
+        {
+          console.log('stuff');
         }
       }
      });
