@@ -10,7 +10,13 @@
 			  ></v-text-field>
 			  <v-textarea label="Note" v-model="newTask.note" outlined></v-textarea>
 			  <div class="d-flex justify-center">
-					<v-btn plain class="mr-2" @click="cancelButtonClick">Cancel</v-btn>
+					<v-btn plain class="mr-2" @click="cancelNewDataPopup" >Cancel</v-btn>
+					
+
+					<!-- 
+						Baga functionalitate si la add nebunu meu
+						tpp, david 
+					--> 
 					<v-btn color="white" @click="">Add</v-btn>
 			</div>
 			</v-form>
@@ -20,7 +26,11 @@
 
 <script>
 
+import Drawer from '@/pages/Drawer.vue';
 import List from './List.vue';
+import { mapState } from 'pinia';
+
+import { useNoteDataStore } from '../stores/app';
 
 export default {
 	data: () => ({
@@ -33,6 +43,7 @@ export default {
 	methods: {
 	cancelButtonClick() {
 		this.showNewTaskDialog = false;
+		console.log('Sunt in NOTE CANCEL'); 
 		this.$refs.form.reset();
 	},
 
@@ -42,16 +53,24 @@ export default {
 
 	getNote() {
 		return this.newTask.note;
+	},
+
+	cancelNewDataPopup()
+	{
+		useNoteDataStore().changeNewNote();
 	}
+
 	},
 
 	computed: {
-		// stuff
-		// this.title, this.note
-	addToNotes() {
+		addToNotes() {
 		console.log(`Sending data ${this.newTask.title} - ${this.newTask.note} ...`);
 		return this.newTask;
-	},
+		},
+
+		...mapState(useNoteDataStore,['showTextBox'])
+		
+
 	}
 };
 </script>
