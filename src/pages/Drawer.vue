@@ -26,7 +26,7 @@
           </template>
         </v-navigation-drawer>
         <v-main style="height: 100vh; width: 50vw;" >
-          <Note/>
+          <Note  style="text-align: center;"/>
 
         </v-main>
       </v-layout>

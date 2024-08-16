@@ -11,7 +11,7 @@
 			  <v-textarea label="Note" v-model="newTask.note" outlined></v-textarea>
 			  <div class="d-flex justify-center">
 					<v-btn plain class="mr-2" @click="cancelButtonClick">Cancel</v-btn>
-					<v-btn color="white">Add</v-btn>
+					<v-btn color="white" @click="">Add</v-btn>
 			</div>
 			</v-form>
 		</v-card>
@@ -19,8 +19,10 @@
 </template>
 
 <script>
+
+import List from './List.vue';
+
 export default {
-	name: 'App',
 	data: () => ({
 	newTask: {
 		title: '',
@@ -32,7 +34,24 @@ export default {
 	cancelButtonClick() {
 		this.showNewTaskDialog = false;
 		this.$refs.form.reset();
+	},
+
+	getTitle() {
+		return this.newTask.title;
+	},
+
+	getNote() {
+		return this.newTask.note;
 	}
+	},
+
+	computed: {
+		// stuff
+		// this.title, this.note
+	addToNotes() {
+		console.log(`Sending data ${this.newTask.title} - ${this.newTask.note} ...`);
+		return this.newTask;
+	},
 	}
 };
 </script>
