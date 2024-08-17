@@ -1,0 +1,1 @@
+import{d as o,r as n,o as r,c as s,w as e,a as t,V as _,b as c}from"./index-CLwgp-05.js";const f=o({__name:"default",setup(l){return(p,u)=>{const a=n("router-view");return r(),s(c,null,{default:e(()=>[t(_,null,{default:e(()=>[t(a)]),_:1})]),_:1})}}});export{f as default};
